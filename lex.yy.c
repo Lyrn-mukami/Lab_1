@@ -282,11 +282,11 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 5
-#define YY_END_OF_BUFFER 6
+#define YY_NUM_RULES 4
+#define YY_END_OF_BUFFER 5
 static yyconst short int yy_accept[11] =
     {   0,
-        0,    0,    6,    4,    2,    3,    1,    2,    1,    0
+        0,    0,    5,    4,    2,    3,    1,    2,    1,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -363,7 +363,21 @@ static char *yy_last_accepting_cpos;
 char *yytext;
 #line 1 "lab1.l"
 #define INITIAL 0
-#line 367 "lex.yy.c"
+/***  
+Admission numbers
+124489
+136096
+134683
+124466
+132562
+***/
+/*** 
+Rule 1 accepts one or more alphabetical characters
+Rule 2 accepts tab spaces
+Rule 3 ends the program when a user presses enter
+Rule 4 accepts all characters except a newline
+***/
+#line 381 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -514,9 +528,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 1 "lab1.l"
+#line 16 "lab1.l"
 
-#line 520 "lex.yy.c"
+#line 534 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -601,30 +615,25 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 2 "lab1.l"
+#line 17 "lab1.l"
 {printf("%s\n", yytext); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 4 "lab1.l"
+#line 19 "lab1.l"
 {/**/};
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 5 "lab1.l"
+#line 20 "lab1.l"
 {return 0;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 6 "lab1.l"
-{/**/}
-	YY_BREAK
-case 5:
-YY_RULE_SETUP
-#line 7 "lab1.l"
+#line 22 "lab1.l"
 ECHO;
 	YY_BREAK
-#line 628 "lex.yy.c"
+#line 637 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1510,12 +1519,14 @@ int main()
 	return 0;
 	}
 #endif
-#line 7 "lab1.l"
+#line 22 "lab1.l"
 
 
 int yywrap(){}
 
 int main(){
+    //The printf statement informs a user that they should enter a sentence
+    printf("Enter your sentence: \n");
     yylex();
     return 0;
 }
